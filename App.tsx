@@ -1,23 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
-import LottieView from 'lottie-react-native'; 
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import Index from './app/route';
 
 type Props = {}
 
 const App = (props: Props) => {
+  const queryClient = new QueryClient()
   return (
-    <View style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <Text>App</Text>
-      <LottieView style={{
-        width: 250,
-        height: 250,
-      }} source={require('./lottieFile.json')} autoPlay loop />
-      <Text>App</Text>
-    </View>
+    <GestureHandlerRootView style={{flex: 1}}>
+      <QueryClientProvider client={queryClient}>
+       <Index />
+      </QueryClientProvider>
+    </GestureHandlerRootView>
   )
 }
 
