@@ -12,8 +12,8 @@ const STACK = createStackNavigator();
 function AppRoute() {
   return (
     <STACK.Navigator screenOptions={{headerShown: false}}>
-      <STACK.Screen name="APP_TAB" component={AppTab} />
       <STACK.Screen name="AUTH" component={AuthRoute} />
+      <STACK.Screen name="APP_TAB" component={AppTab} />
       <STACK.Screen name="HOME" component={Home} />
       <STACK.Screen name="PROFILE" component={Profile} />
       <STACK.Screen name="LOGIN" component={Login} />
